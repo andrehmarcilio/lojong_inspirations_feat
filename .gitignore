@@ -44,3 +44,4 @@ app.*.map.json
 
 # Localization Errors
 l10n_errors.txt
+environment.json

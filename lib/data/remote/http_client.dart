@@ -32,9 +32,12 @@ class DioHttpClient implements HttpClient {
 
   @override
   FutureOr<HttpResult> get({required Endpoint endpoint}) async {
+    final requestOptions = Options(headers: ServerHost.headers);
+
     try {
       final response = await _dio.get(
         endpoint.path,
+        options: requestOptions,
         queryParameters: endpoint.queryParameters,
       );
       return Success(response.data);

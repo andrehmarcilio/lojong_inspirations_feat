@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:get_it/get_it.dart';
 
+import '../session_manager.dart';
+
 final serviceLocator = ServiceLocator();
 
 class ServiceLocator {
@@ -46,4 +48,6 @@ class ServiceLocator {
   }
 }
 
-void initializeDependencies() {}
+void initializeDependencies() {
+  serviceLocator.registerSingleton<SessionManager>(MockedSessionManager());
+}
