@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lojong_test_app/app/theme/colors.dart';
+
+import 'colors.dart';
 
 abstract class AppFonts {
   static final textTheme = TextTheme(

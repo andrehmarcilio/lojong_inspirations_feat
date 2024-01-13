@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:lojong_test_app/app/theme/theme.dart';
-import 'package:lojong_test_app/utils/extensions/context_extensions.dart';
+
+import '../utils/extensions/context_extensions.dart';
+import 'theme/theme.dart';
 
 class LojongApp extends StatelessWidget {
   const LojongApp({super.key});
