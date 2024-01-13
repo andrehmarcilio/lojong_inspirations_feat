@@ -11,6 +11,7 @@ class AppColors {
   Color get onPrimary => Theme.of(context).colorScheme.onPrimary;
   Color get surface => Theme.of(context).colorScheme.surface;
   Color get onSurface => Theme.of(context).colorScheme.onSurface;
+  Color get background => Theme.of(context).colorScheme.background;
 }
 
 /// A utility class to access text styles from the app's theme.

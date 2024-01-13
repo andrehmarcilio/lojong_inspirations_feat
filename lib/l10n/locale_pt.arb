@@ -1,5 +1,10 @@
 {
     "@@locale" : "pt",
 
-    "appTitle": "Lojong"
+    "appTitle": "Lojong",
+
+    "inspirationsTitle": "INSPIRAÇÕES",
+    "inspirationsVideosTabLabel": "VÍDEOS",
+    "inspirationsArticlesTabLabel": "ARTIGOS",
+    "inspirationsQuotesTabLabel": "CITAÇÕES"
 }
