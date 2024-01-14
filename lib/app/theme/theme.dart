@@ -12,6 +12,8 @@ abstract class AppTheme {
       primary: AppColors.pink,
       surface: AppColors.darkerPink,
       onSurface: AppColors.white,
+      primaryContainer: AppColors.lightGrey,
+      onPrimaryContainer: AppColors.grey,
     ),
     tabBarTheme: TabBarTheme(
       labelColor: AppColors.pink,
