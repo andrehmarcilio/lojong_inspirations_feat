@@ -12,4 +12,7 @@ abstract class AppColors {
 
   ///  Text Color
   static const grey = Color.fromRGBO(128, 132, 143, 1);
+
+  // On Surface Variant
+  static const lightGrey = Color.fromRGBO(236, 236, 236, 1);
 }
