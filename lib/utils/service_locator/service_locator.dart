@@ -2,6 +2,10 @@ import 'dart:async';
 
 import 'package:get_it/get_it.dart';
 
+import '../../data/remote/http_client.dart';
+import '../../data/services/video_service.dart';
+import '../../features/videos/use_cases/get_videos_use_case.dart';
+import '../../features/videos/videos_view_model.dart';
 import '../session_manager.dart';
 
 final serviceLocator = ServiceLocator();
@@ -49,5 +53,19 @@ class ServiceLocator {
 }
 
 void initializeDependencies() {
+  serviceLocator.registerSingleton<HttpClient>(DioHttpClient());
+
   serviceLocator.registerSingleton<SessionManager>(MockedSessionManager());
+
+  serviceLocator.registerFactory<VideoService>(() {
+    return VideoServiceImpl(client: serviceLocator.get());
+  });
+
+  serviceLocator.registerFactory<GetVideosUseCase>(() {
+    return GetVideosUseCaseImpl(videoService: serviceLocator.get());
+  });
+
+  serviceLocator.registerFactory(() {
+    return VideosViewModel(getVideosUseCase: serviceLocator.get());
+  });
 }

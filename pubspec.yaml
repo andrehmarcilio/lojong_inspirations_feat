@@ -18,6 +18,7 @@ dependencies:
   # Network
   dio: ^5.4.0
   chucker_flutter: ^1.6.2
+  cached_network_image: ^3.3.1
 
   # Utils
   get_it: ^7.6.6
@@ -30,6 +31,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.1 
+  mocktail: ^1.0.2
+  network_image_mock: ^2.0.1
 
 flutter:
   generate: true

@@ -6,5 +6,15 @@
     "inspirationsTitle": "INSPIRAÇÕES",
     "inspirationsVideosTabLabel": "VÍDEOS",
     "inspirationsArticlesTabLabel": "ARTIGOS",
-    "inspirationsQuotesTabLabel": "CITAÇÕES"
+    "inspirationsQuotesTabLabel": "CITAÇÕES",
+
+
+    "commonsShareActionInputLabel": "Compartilhar",
+    "commonsTryAgainActionInputLabel": "Recarregar",
+
+
+    "commonsDefaultErrorMessageTitle": "OPS!",
+    "commonsDefaultErrorMessageLabel": "Ocorreu um erro inesperado, estamos trabalhando nisso!",
+    "commonsServerSideErrorMessageLabel": "Ocorreu um erro inesperado, estamos trabalhando nisso! Aguarde um pouco e tente novamente"
+
 }
