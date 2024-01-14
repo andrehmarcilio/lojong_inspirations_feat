@@ -3,7 +3,10 @@ import 'dart:async';
 import 'package:get_it/get_it.dart';
 
 import '../../data/remote/http_client.dart';
+import '../../data/services/article_service.dart';
 import '../../data/services/video_service.dart';
+import '../../features/articles/articles_view_model.dart';
+import '../../features/articles/use_cases/get_articles_use_case.dart';
 import '../../features/videos/use_cases/get_videos_use_case.dart';
 import '../../features/videos/videos_view_model.dart';
 import '../session_manager.dart';
@@ -61,11 +64,23 @@ void initializeDependencies() {
     return VideoServiceImpl(client: serviceLocator.get());
   });
 
+  serviceLocator.registerFactory<ArticleService>(() {
+    return ArticleServiceImpl(client: serviceLocator.get());
+  });
+
   serviceLocator.registerFactory<GetVideosUseCase>(() {
     return GetVideosUseCaseImpl(videoService: serviceLocator.get());
   });
 
+  serviceLocator.registerFactory<GetArticlesUseCase>(() {
+    return GetArticlesUseCaseImpl(articleService: serviceLocator.get());
+  });
+
   serviceLocator.registerFactory(() {
     return VideosViewModel(getVideosUseCase: serviceLocator.get());
+  });
+
+  serviceLocator.registerFactory(() {
+    return ArticlesViewModel(getArticlesUseCase: serviceLocator.get());
   });
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../common/components/tabbar_template.dart';
 import '../../utils/extensions/context_extensions.dart';
+import '../articles/articles_view.dart';
 import '../videos/videos_view.dart';
 
 class InspirationsView extends StatefulWidget {
@@ -23,9 +24,7 @@ class _InspirationsViewState extends State<InspirationsView> {
       ],
       tabViews: [
         const VideosView(),
-        Container(
-          color: Colors.white,
-        ),
+        const ArticlesView(),
         Container(
           color: Colors.pink,
         ),
