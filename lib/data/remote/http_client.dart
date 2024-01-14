@@ -12,18 +12,18 @@ import 'server_host.dart';
 typedef HttpResult = FutureOr<Either<HttpException, Object>>;
 
 abstract interface class HttpClient {
-  FutureOr<HttpResult> get({required Endpoint endpoint});
+  HttpResult get({required Endpoint endpoint});
 }
 
 class DioHttpClient implements HttpClient {
   late Dio _dio;
 
-  DioHttpClient() {
+  DioHttpClient([Dio? dio]) {
     final baseOptions = BaseOptions(
       baseUrl: ServerHost.baseUrl,
     );
 
-    _dio = Dio(baseOptions);
+    _dio = dio ?? Dio(baseOptions);
 
     if (kDebugMode) {
       _dio.interceptors.add(ChuckerDioInterceptor());
@@ -31,7 +31,7 @@ class DioHttpClient implements HttpClient {
   }
 
   @override
-  FutureOr<HttpResult> get({required Endpoint endpoint}) async {
+  HttpResult get({required Endpoint endpoint}) async {
     final requestOptions = Options(headers: ServerHost.headers);
 
     try {
