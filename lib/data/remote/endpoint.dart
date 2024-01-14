@@ -1,6 +1,6 @@
 class Endpoint {
   String path;
-  Map<String, String>? queryParameters;
+  Map<String, dynamic>? queryParameters;
 
   Endpoint({
     required this.path,
