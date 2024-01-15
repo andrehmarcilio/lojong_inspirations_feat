@@ -26,5 +26,7 @@ class AppFonts {
   TextStyle? get titleLarge => Theme.of(context).textTheme.titleLarge;
   TextStyle? get titleMedium => Theme.of(context).textTheme.titleMedium;
   TextStyle? get titleSmall => Theme.of(context).textTheme.titleSmall;
+  TextStyle? get bodyLarge => Theme.of(context).textTheme.bodyLarge;
   TextStyle? get bodyMedium => Theme.of(context).textTheme.bodyMedium;
+  TextStyle? get labelMedium => Theme.of(context).textTheme.labelMedium;
 }

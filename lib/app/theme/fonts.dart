@@ -17,9 +17,17 @@ abstract class AppFonts {
       fontSize: 12,
       fontWeight: FontWeight.w700,
     ),
+    bodyLarge: GoogleFonts.asap(
+      fontSize: 16,
+      fontWeight: FontWeight.w700,
+    ),
     bodyMedium: GoogleFonts.asap(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+    ),
+    labelMedium: GoogleFonts.asap(
+      fontSize: 13,
+      fontWeight: FontWeight.w600,
     ),
   ).apply(
     displayColor: AppColors.grey,

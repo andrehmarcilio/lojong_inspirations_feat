@@ -5,11 +5,13 @@ class SvgWidget extends StatelessWidget {
   final double? width;
   final double? height;
   final String assetPath;
+  final BoxFit? boxFit;
 
   const SvgWidget({
     required this.assetPath,
     this.width,
     this.height,
+    this.boxFit,
     super.key,
   });
 
@@ -19,6 +21,7 @@ class SvgWidget extends StatelessWidget {
       assetPath,
       width: width,
       height: height,
+      fit: boxFit ?? BoxFit.contain,
     );
   }
 }

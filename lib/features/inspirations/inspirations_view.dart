@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../common/components/tabbar_template.dart';
 import '../../utils/extensions/context_extensions.dart';
 import '../articles/articles_view.dart';
+import '../quotes/quotes_view.dart';
 import '../videos/videos_view.dart';
 
 class InspirationsView extends StatefulWidget {
@@ -22,12 +23,10 @@ class _InspirationsViewState extends State<InspirationsView> {
         context.l10n.inspirationsArticlesTabLabel,
         context.l10n.inspirationsQuotesTabLabel,
       ],
-      tabViews: [
-        const VideosView(),
-        const ArticlesView(),
-        Container(
-          color: Colors.pink,
-        ),
+      tabViews: const [
+        VideosView(),
+        ArticlesView(),
+        QuotesView(),
       ],
     );
   }
