@@ -15,6 +15,7 @@
 
     "commonsDefaultErrorMessageTitle": "OPS!",
     "commonsDefaultErrorMessageLabel": "Ocorreu um erro inesperado, estamos trabalhando nisso!",
+    "commonsConnectionErrorMessageLabel": "Não foi possivel conectar ao servidor, verifique se está conectado a internet.",
     "commonsServerSideErrorMessageLabel": "Ocorreu um erro inesperado, estamos trabalhando nisso! Aguarde um pouco e tente novamente"
 
 }

@@ -12,10 +12,13 @@ class HttpException {
   }
 
   AppExceptionMessages get exceptionMessage {
-    if (statusCode == 500) {
-      return AppExceptionMessages.serverSide;
+    switch (statusCode) {
+      case null:
+        return AppExceptionMessages.noConnection;
+      case >= 500:
+        return AppExceptionMessages.serverSide;
+      default:
+        return AppExceptionMessages.unknown;
     }
-
-    return AppExceptionMessages.unknown;
   }
 }

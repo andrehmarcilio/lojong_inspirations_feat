@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:get_it/get_it.dart';
+import 'package:path_provider/path_provider.dart';
 
 import '../../data/remote/http_client.dart';
 import '../../data/services/article_service.dart';
+import '../../data/services/internet_check_service.dart';
 import '../../data/services/quote_service.dart';
 import '../../data/services/video_service.dart';
 import '../../features/article_details/article_details_view_model.dart';
@@ -47,14 +49,6 @@ class ServiceLocator {
     _provider.registerFactoryParam<T, ParamType, void>((param, _) => constructor.call(param));
   }
 
-  void pushNewScope(void Function(ServiceLocator)? init) {
-    _provider.pushNewScope(init: (_) => init?.call(serviceLocator));
-  }
-
-  Future<void> popScope() async {
-    await _provider.popScope();
-  }
-
   Future<void> reset() async {
     await _provider.reset();
   }
@@ -64,9 +58,17 @@ class ServiceLocator {
   }
 }
 
-void initializeDependencies() {
+Future<void> initializeDependencies() async {
   // Singletons
-  serviceLocator.registerSingleton<HttpClient>(DioHttpClient());
+  serviceLocator.registerSingleton<InternetCheckService>(InternetCheckServiceImpl());
+
+  serviceLocator.registerSingletonAsync<HttpClient>(() async {
+    final appDirectory = await getTemporaryDirectory();
+    return DioHttpClient(
+      appTemporaryDirectory: appDirectory,
+      internetCheckService: serviceLocator.get(),
+    );
+  });
 
   serviceLocator.registerSingleton<SessionManager>(MockedSessionManager());
 
@@ -119,4 +121,6 @@ void initializeDependencies() {
   serviceLocator.registerFactory(() {
     return QuotesViewModel(getQuotesUseCase: serviceLocator.get());
   });
+
+  await serviceLocator.allReady();
 }

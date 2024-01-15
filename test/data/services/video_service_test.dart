@@ -50,13 +50,13 @@ void main() {
       expect(result.failureData, equals(AppExceptionMessages.serverSide));
     });
 
-    test('getVideos should return a unknown exception message when httpClient return a 500 status code', () async {
-      final unknownException = HttpException();
-      when(() => httpClient.get(endpoint: any(named: 'endpoint'))).thenAnswer((_) => Failure(unknownException));
+    test('getVideos should return a unknown exception message when httpClient return a null status code', () async {
+      final noConnectionException = HttpException();
+      when(() => httpClient.get(endpoint: any(named: 'endpoint'))).thenAnswer((_) => Failure(noConnectionException));
 
       final result = await videoService.getVideos();
 
-      expect(result.failureData, equals(AppExceptionMessages.unknown));
+      expect(result.failureData, equals(AppExceptionMessages.noConnection));
     });
   });
 }

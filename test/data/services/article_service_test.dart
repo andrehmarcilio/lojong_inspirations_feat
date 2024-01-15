@@ -50,13 +50,14 @@ void main() {
       expect(result.failureData, equals(AppExceptionMessages.serverSide));
     });
 
-    test('getArticles should return a unknown exception message when httpClient return a 500 status code', () async {
+    test('getArticles should return a connection exception message when httpClient return a null status code',
+        () async {
       final unknownException = HttpException();
       when(() => httpClient.get(endpoint: any(named: 'endpoint'))).thenAnswer((_) => Failure(unknownException));
 
       final result = await articleService.getArticles(page: 1);
 
-      expect(result.failureData, equals(AppExceptionMessages.unknown));
+      expect(result.failureData, equals(AppExceptionMessages.noConnection));
     });
 
     test('getArticleDetails should return the response data when httpClient return a success response', () async {
