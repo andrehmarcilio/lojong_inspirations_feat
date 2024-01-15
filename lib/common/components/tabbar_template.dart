@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/style_helpers.dart';
-import 'my_back_button.dart';
+import 'my_app_bar.dart';
 
 class TabBarTemplate extends StatelessWidget {
   final String title;
@@ -24,26 +24,7 @@ class TabBarTemplate extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(12),
-                child: Row(
-                  children: [
-                    const Expanded(
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: MyBackButton(),
-                      ),
-                    ),
-                    Text(
-                      title,
-                      style: AppFonts(context).titleSmall?.copyWith(
-                            color: AppColors(context).onPrimary,
-                          ),
-                    ),
-                    const Spacer(),
-                  ],
-                ),
-              ),
+              MyAppBar(title: title),
               SizedBox(
                 height: 36,
                 child: Container(
