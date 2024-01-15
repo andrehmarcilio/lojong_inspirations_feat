@@ -20,48 +20,53 @@ class ContentSectionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        const SizedBox(height: 12),
-        Text(
-          title,
-          style: AppFonts(context).titleMedium,
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(height: 12),
-        Material(
-          elevation: 1.5,
-          borderRadius: BorderRadius.circular(20),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: AspectRatio(
-              aspectRatio: 16 / 9,
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  CachedNetworkImage(
-                    imageUrl: imageUrl,
-                    fit: BoxFit.cover,
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 600),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const SizedBox(height: 12),
+            Text(
+              title,
+              style: AppFonts(context).titleMedium,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 12),
+            Material(
+              elevation: 1.5,
+              borderRadius: BorderRadius.circular(20),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      CachedNetworkImage(
+                        imageUrl: imageUrl,
+                        fit: BoxFit.cover,
+                      ),
+                      Center(child: foregroundImageIcon),
+                    ],
                   ),
-                  Center(child: foregroundImageIcon),
-                ],
+                ),
               ),
             ),
-          ),
+            const SizedBox(height: 12),
+            Text(
+              description,
+              style: AppFonts(context).bodyMedium,
+              textAlign: TextAlign.center,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ),
+            const SizedBox(height: 12),
+            const Center(child: ShareButton()),
+            const SizedBox(height: 16),
+          ],
         ),
-        const SizedBox(height: 12),
-        Text(
-          description,
-          style: AppFonts(context).bodyMedium,
-          textAlign: TextAlign.center,
-          maxLines: 3,
-          overflow: TextOverflow.ellipsis,
-        ),
-        const SizedBox(height: 12),
-        const Center(child: ShareButton()),
-        const SizedBox(height: 16),
-      ],
+      ),
     );
   }
 }

@@ -68,10 +68,11 @@ class _QuotesSuccessView extends StatelessWidget {
       itemCount: quotes.length,
       itemBuilder: (_, index) {
         final quote = quotes[index];
+        final quoteStyle = index % 2 == 0 ? QuoteItemStyle.blue : QuoteItemStyle.amber;
 
         return QuoteItemWidget(
           quote: quote,
-          index: index,
+          style: quoteStyle,
         );
       },
       separatorBuilder: (_, __) => const SizedBox(height: 12),

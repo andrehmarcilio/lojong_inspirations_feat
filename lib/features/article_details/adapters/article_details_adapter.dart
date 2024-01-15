@@ -7,6 +7,7 @@ abstract class ArticleDetailsAdapter {
         title: map['title'],
         imageUrl: map['image_url'],
         authorName: map['author_name'],
+        authorImg: map['author_image'],
         authorDescription: map['author_description'],
         htmlContent: map['full_text'],
       );

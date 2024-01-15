@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/style_helpers.dart';
@@ -26,7 +27,7 @@ class TabBarTemplate extends StatelessWidget {
             children: [
               MyAppBar(title: title),
               SizedBox(
-                height: 36,
+                height: 40,
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 12),
                   padding: const EdgeInsets.all(4),
@@ -40,9 +41,10 @@ class TabBarTemplate extends StatelessWidget {
                     tabAlignment: TabAlignment.center,
                     tabs: tabLabels.map((label) {
                       return Tab(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 24),
-                          child: Text(label),
+                        child: Container(
+                          width: 90,
+                          alignment: Alignment.center,
+                          child: AutoSizeText(label, maxLines: 1, minFontSize: 8),
                         ),
                       );
                     }).toList(),

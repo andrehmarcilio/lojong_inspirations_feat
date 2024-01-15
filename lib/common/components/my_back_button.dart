@@ -9,7 +9,12 @@ class MyBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: Navigator.of(context).pop,
+      borderRadius: BorderRadius.circular(16),
+      onTap: () {
+        if (Navigator.of(context).canPop()) {
+          Navigator.of(context).pop();
+        }
+      },
       child: SvgWidget(
         width: 32,
         height: 32,

@@ -103,6 +103,7 @@ class _ArticleDetailsSuccessView extends StatelessWidget {
           const SizedBox(height: 20),
           Container(
             padding: const EdgeInsets.all(16),
+            constraints: const BoxConstraints(maxWidth: 500),
             decoration: BoxDecoration(
               color: AppColors(context).primaryContainer,
               borderRadius: BorderRadius.circular(10),
@@ -115,6 +116,7 @@ class _ArticleDetailsSuccessView extends StatelessWidget {
                     child: CachedNetworkImage(
                       imageUrl: article.authorImg ?? '',
                       height: 36,
+                      width: 36,
                       fit: BoxFit.cover,
                     ),
                   ),

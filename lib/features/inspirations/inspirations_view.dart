@@ -6,14 +6,9 @@ import '../articles/articles_view.dart';
 import '../quotes/quotes_view.dart';
 import '../videos/videos_view.dart';
 
-class InspirationsView extends StatefulWidget {
+class InspirationsView extends StatelessWidget {
   const InspirationsView({super.key});
 
-  @override
-  State<InspirationsView> createState() => _InspirationsViewState();
-}
-
-class _InspirationsViewState extends State<InspirationsView> {
   @override
   Widget build(BuildContext context) {
     return TabBarTemplate(

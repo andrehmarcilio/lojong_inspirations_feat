@@ -5,32 +5,6 @@ import '../../utils/extensions/context_extensions.dart';
 import '../../utils/style_helpers.dart';
 import 'svg_widget.dart';
 
-enum ShareButtonStyle {
-  standart,
-  blue;
-
-  Color getColor(BuildContext context) {
-    return switch (this) {
-      standart => AppColors(context).primaryContainer,
-      blue => const Color.fromRGBO(64, 103, 171, 1),
-    };
-  }
-
-  Color getFontColor(BuildContext context) {
-    return switch (this) {
-      standart => AppColors(context).onPrimaryContainer,
-      blue => Colors.white,
-    };
-  }
-
-  String get iconPath {
-    return switch (this) {
-      standart => IconPaths.icShareGrey,
-      blue => IconPaths.icShareWhite,
-    };
-  }
-}
-
 class ShareButton extends StatelessWidget {
   final VoidCallback? onTap;
   final ShareButtonStyle style;
@@ -70,5 +44,33 @@ class ShareButton extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+enum ShareButtonStyle {
+  standart,
+  amber,
+  blue;
+
+  Color getColor(BuildContext context) {
+    return switch (this) {
+      standart => AppColors(context).primaryContainer,
+      blue => const Color.fromRGBO(64, 103, 171, 1),
+      amber => Colors.black.withOpacity(.5),
+    };
+  }
+
+  Color getFontColor(BuildContext context) {
+    return switch (this) {
+      standart => AppColors(context).onPrimaryContainer,
+      blue || amber => Colors.white,
+    };
+  }
+
+  String get iconPath {
+    return switch (this) {
+      standart => IconPaths.icShareGrey,
+      blue || amber => IconPaths.icShareWhite,
+    };
   }
 }
