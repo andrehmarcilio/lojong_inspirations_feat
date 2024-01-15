@@ -12,6 +12,19 @@ abstract class AppTheme {
       primary: AppColors.pink,
       surface: AppColors.darkerPink,
       onSurface: AppColors.white,
+      primaryContainer: AppColors.lightGrey,
+      onPrimaryContainer: AppColors.grey,
+    ),
+    tabBarTheme: TabBarTheme(
+      labelColor: AppColors.pink,
+      labelStyle: AppFonts.textTheme.titleSmall,
+      unselectedLabelColor: AppColors.white,
+      dividerColor: Colors.transparent,
+      indicatorSize: TabBarIndicatorSize.label,
+      indicator: BoxDecoration(
+        color: AppColors.white,
+        borderRadius: BorderRadius.circular(40),
+      ),
     ),
   );
 }

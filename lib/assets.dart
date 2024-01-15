@@ -11,6 +11,6 @@ abstract class IconPaths {
   static String icBack = '$_iconsBasePath/ic_back_button.svg';
   static String icPlayWhite = '$_iconsBasePath/ic_play_white.svg';
   static String icPlayBlue = '$_iconsBasePath/ic_play_blue.svg';
-  static String icShareGrey = '$_iconsBasePath/ic_share_gray.svg';
+  static String icShareGrey = '$_iconsBasePath/ic_share_grey.svg';
   static String icShareWhite = '$_iconsBasePath/ic_share_white.svg';
 }

@@ -11,6 +11,9 @@ class AppColors {
   Color get onPrimary => Theme.of(context).colorScheme.onPrimary;
   Color get surface => Theme.of(context).colorScheme.surface;
   Color get onSurface => Theme.of(context).colorScheme.onSurface;
+  Color get background => Theme.of(context).colorScheme.background;
+  Color get primaryContainer => Theme.of(context).colorScheme.primaryContainer;
+  Color get onPrimaryContainer => Theme.of(context).colorScheme.onPrimaryContainer;
 }
 
 /// A utility class to access text styles from the app's theme.
@@ -23,5 +26,9 @@ class AppFonts {
   TextStyle? get titleLarge => Theme.of(context).textTheme.titleLarge;
   TextStyle? get titleMedium => Theme.of(context).textTheme.titleMedium;
   TextStyle? get titleSmall => Theme.of(context).textTheme.titleSmall;
+  TextStyle? get bodyLarge => Theme.of(context).textTheme.bodyLarge;
   TextStyle? get bodyMedium => Theme.of(context).textTheme.bodyMedium;
+  TextStyle? get bodySmall => Theme.of(context).textTheme.bodySmall;
+  TextStyle? get labelMedium => Theme.of(context).textTheme.labelMedium;
+  TextStyle? get labelSmall => Theme.of(context).textTheme.labelSmall;
 }
