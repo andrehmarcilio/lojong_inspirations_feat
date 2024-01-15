@@ -58,5 +58,25 @@ void main() {
 
       expect(result.failureData, equals(AppExceptionMessages.unknown));
     });
+
+    test('getArticleDetails should return the response data when httpClient return a success response', () async {
+      final mockedResponseData = [
+        {'title': 'O relato de um retiro de 10 dias de meditação'},
+      ];
+      when(() => httpClient.get(endpoint: any(named: 'endpoint'))).thenAnswer((_) => Success(mockedResponseData));
+
+      final result = await articleService.getArticleDetails(articleId: 1);
+
+      expect(result.successData, mockedResponseData);
+    });
+
+    test('getArticles should return a serverSide exception message when httpClient return a 500 status code', () async {
+      final serverSideException = HttpException(statusCode: 500);
+      when(() => httpClient.get(endpoint: any(named: 'endpoint'))).thenAnswer((_) => Failure(serverSideException));
+
+      final result = await articleService.getArticleDetails(articleId: 1);
+
+      expect(result.failureData, equals(AppExceptionMessages.serverSide));
+    });
   });
 }
